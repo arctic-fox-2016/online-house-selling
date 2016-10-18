@@ -9,3 +9,4 @@
 //Marker di peta
 
 APIKey: AIzaSyC4aQ7qqMlcWpv2fOZ5o4nw1KuAJbbpWGQ
+AIzaSyBjA9s2q4vk2TCvQ9O81qrqbv5rx4lqKj0

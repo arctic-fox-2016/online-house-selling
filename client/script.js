@@ -12,8 +12,8 @@ $(document).ready(function(){
 
   $("#menu-display").click(function(){
     $("#all-house").show()
-    $("#search").hide()
     $("#new-house").hide()
+    $("#search").hide()
   })
 
   $("#menu-search").click(function(){
@@ -58,14 +58,22 @@ let refreshAllHouse = function(){
       for(let i in result){
         let component = ""
         component = component +
-        `Title: ${result[i].title} <br>
-        Address: ${result[i].address} <br>
-        Description: ${result[i].description} <br>
-        Price: ${result[i].price} <br>
-        Phone_Number: ${result[i].phone_number} <br>
-        Email: ${result[i].email} <br>
-        Picture: ${result[i].picture} <br>
-        <img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Clabel:C%7C${result[i].google_map.lat},${result[i].google_map.lng}&size=400x300&key=AIzaSyBjA9s2q4vk2TCvQ9O81qrqbv5rx4lqKj0"><br>
+        `
+        <div class="row" style="margin:5px; background-color: #c9ede9">
+          <div class="col-lg-12" style="margin-bottom:10px; margin-top:10px"><span class="label label-primary">${result[i].title}</span></div>
+          <div class="col-lg-4">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Clabel:C%7C${result[i].google_map.lat},${result[i].google_map.lng}&size=250x250&key=AIzaSyBjA9s2q4vk2TCvQ9O81qrqbv5rx4lqKj0"><br>
+          </div>
+          <div class="col-lg-8">
+            <div class="panel panel-primary">Title: ${result[i].title}</div>
+            <div class="panel panel-primary">Address: ${result[i].address}</div>
+            <div class="panel panel-primary">Description: ${result[i].description}</div>
+            <div class="panel panel-primary">Price: ${result[i].price}</div>
+            <div class="panel panel-primary">Phone_Number: ${result[i].phone_number}</div>
+            <div class="panel panel-primary">Email: ${result[i].email}</div>
+            <div class="panel panel-primary">Picture: ${result[i].picture}</div>
+          </div>
+        </div>
         `
         allHouse = allHouse + component
       }
@@ -83,14 +91,22 @@ let searchHouse = function(query){
       for(let i in result){
         let component = ""
         component = component +
-        `Title: ${result[i].title} <br>
-        Address: ${result[i].address} <br>
-        Description: ${result[i].description} <br>
-        Price: ${result[i].price} <br>
-        Phone_Number: ${result[i].phone_number} <br>
-        Email: ${result[i].email} <br>
-        Picture: ${result[i].picture} <br>
-        <img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Clabel:C%7C${result[i].google_map.lat},${result[i].google_map.lng}&size=400x300&key=AIzaSyBjA9s2q4vk2TCvQ9O81qrqbv5rx4lqKj0"><br>
+        `
+        <div class="row" style="margin:5px; background-color: #c9ede9">
+          <div class="col-lg-12" style="margin-bottom:10px"><span class="label label-primary">${result[i].title}</span></div>
+          <div class="col-lg-4">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Clabel:C%7C${result[i].google_map.lat},${result[i].google_map.lng}&size=250x250&key=AIzaSyBjA9s2q4vk2TCvQ9O81qrqbv5rx4lqKj0"><br>
+          </div>
+          <div class="col-lg-8">
+            <div class="panel panel-primary">Title: ${result[i].title}</div>
+            <div class="panel panel-primary">Address: ${result[i].address}</div>
+            <div class="panel panel-primary">Description: ${result[i].description}</div>
+            <div class="panel panel-primary">Price: ${result[i].price}</div>
+            <div class="panel panel-primary">Phone_Number: ${result[i].phone_number}</div>
+            <div class="panel panel-primary">Email: ${result[i].email}</div>
+            <div class="panel panel-primary">Picture: ${result[i].picture}</div>
+          </div>
+        </div>
         `
         allHouse = allHouse + component
       }
