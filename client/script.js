@@ -1,6 +1,28 @@
 $(document).ready(function(){
+  refreshAllHouse()
+  $("#all-house").hide()
+  $("#search").hide()
+  $("#new-house").hide()
+
+  $("#menu-add").click(function(){
+    $("#all-house").hide()
+    $("#search").hide()
+    $("#new-house").show()
+  })
+
+  $("#menu-display").click(function(){
+    $("#all-house").show()
+    $("#search").hide()
+    $("#new-house").hide()
+  })
+
+  $("#menu-search").click(function(){
+    $("#all-house").hide()
+    $("#search").show()
+    $("#new-house").hide()
+  })
+
   $("#input-submit").click(function(){
-    console.log('test')
     $.ajax({
       url:'http://localhost:3000/api',
       type: 'POST',
@@ -16,10 +38,6 @@ $(document).ready(function(){
         refreshAllHouse()
       }
     })
-  })
-
-  $("#menu-display").click(function(){
-    refreshAllHouse()
   })
 })
 
