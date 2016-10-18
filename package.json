@@ -1,0 +1,26 @@
+{
+  "name": "online-house-selling",
+  "version": "1.0.0",
+  "description": "//Masukan data rumah (Nama House, Alamat, Details, Harga, Tanggal Post, Nama Owner, Nomor Telephone, Email, Gambar, Lokasi di Google Map) //Melihat seluruh data rumah dalam bentuk list //Search berdasarkan harga, tanggal post, dan spesifikasi rumah //Halaman detail rumah //Marker seluruh rumah di google Map //Drag and Drop??? //Marker di peta",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arctic-fox-2016/online-house-selling.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arctic-fox-2016/online-house-selling/issues"
+  },
+  "homepage": "https://github.com/arctic-fox-2016/online-house-selling#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.4"
+  }
+}
