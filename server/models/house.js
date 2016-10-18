@@ -1,5 +1,5 @@
 let mongoose = require('mongoose')
-mongoose.connect('localhost:27017/test-online-house')
+mongoose.connect('localhost:27017/test2-online-house')
 let Schema = mongoose.Schema
 
 let houseSchema = new Schema({

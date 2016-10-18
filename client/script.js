@@ -13,22 +13,39 @@ $(document).ready(function(){
         $("#input-email").val("");
         $("#input-picture").val("");
         $("#message").html("Add is successful, feel free to add another")
+        refreshAllHouse()
       }
     })
   })
 
   $("#menu-display").click(function(){
-    $.ajax({
-      url: 'http://localhost:3000/api',
-      type: "GET",
-      success: function(result){
-        for(let i in result){
-          let perHouse = ""
-
-        }
-      }
-    })
+    refreshAllHouse()
   })
 })
+
+let refreshAllHouse = function(){
+  $.ajax({
+    url: 'http://localhost:3000/api',
+    type: "GET",
+    success: function(result){
+      let allHouse = ""
+      for(let i in result){
+        let component = ""
+        component = component +
+        `Title: ${result[i].title} <br>
+        Address: ${result[i].address} <br>
+        Description: ${result[i].description} <br>
+        Price: ${result[i].price} <br>
+        Phone_Number: ${result[i].phone_number} <br>
+        Email: ${result[i].email} <br>
+        Picture: ${result[i].picture} <br>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Clabel:C%7C${result[i].google_map.lat},${result[i].google_map.lng}&size=400x300&key=AIzaSyBjA9s2q4vk2TCvQ9O81qrqbv5rx4lqKj0"><br>
+        `
+        allHouse = allHouse + component
+      }
+      $("#all-house").html(allHouse)
+    }
+  })
+}
 
       //<img src="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Clabel:C%7C40.718217,-73.998284&size=400x300&key=AIzaSyBjA9s2q4vk2TCvQ9O81qrqbv5rx4lqKj0">
