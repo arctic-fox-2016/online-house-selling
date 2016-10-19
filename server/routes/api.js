@@ -10,5 +10,6 @@ router.get('/listings', listingsController.displays)
 router.get('/listings/:id', listingsController.displayOne)
 router.put('/listings/:id', listingsController.update)
 router.delete('/listings/:id', listingsController.deleteitem)
+router.get('/search/:query', listingsController.searchHouse)
 
 module.exports = router

@@ -1,60 +1,67 @@
+@import 'base/_variable.scss';
 
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+
+
+}
 body {
-  background-color: #fff;
-
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: $font-fam-1
 }
-h1 {
-  font-family: $helvetica;
-}
-
-
-section {
-  @include linear-gradient(to top, red, orange);
-}
-
-a:hover {
-  // Animation shorthand works the same as the CSS3 animation shorthand
-  @include animation-iteration-count(infinite);
-
-}
-button{
-}
-
-.box {
-  @include border-style(dashed null solid);
-}
-
-.section-test {
-  @include outer-container;
-  header { @include span-columns(3); }
-  section { @include span-columns(9); }
-}
-
-.ivan-col-6{
-  @include span-columns(6);
-}
-.ivan-col-3 {
-  @include span-columns(3);
-}
-.ivan-col-9{
-  @include span-columns(9);
-}
-.ivan-col-9 {
-  @include span-columns(9);
-}
-
-.button1 {
-  @include button(simple, #ff0000);
-    @include border-top-radius(4px)
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
 
 
-.button2{
-  @include button(simple, #004ab9)
-  @include border-top-radius(4px)
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+
+body > .container {
+  padding: 60px 15px 0;
 }
 
-.button3{
-  @include button(simple, #3e9300);
-    @include border-top-radius(4px)
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.margin20 {
+  margin-top:20px;
+}
+
+.iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+}
+.iframe-container > *{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.padding20{
+  padding:20px;
 }

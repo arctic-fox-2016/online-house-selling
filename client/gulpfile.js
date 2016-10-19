@@ -19,7 +19,7 @@ gulp.task("script", function() {
 gulp.task("serve", function() {
     browserSync.init({
         server: {
-            baseDir: "./" // server nnya !
+            baseDir: "./public" // server nnya !
         }
     })
     gulp.watch("./resource/assets/sass/**/*.scss", ['sass']);
@@ -27,5 +27,6 @@ gulp.task("serve", function() {
     gulp.watch("./resource/assets/js/**/*.js", ['script']);
     gulp.watch("./public/assets/css/**/*.css").on("change", browserSync.reload) //stiap ada perubahan reload
     gulp.watch("./public/assets/js/app.js").on("change", browserSync.reload)
+    gulp.watch("./public/*.html").on("change", browserSync.reload)
 
 })

@@ -5,7 +5,8 @@ module.exports = {
     displays: displays,
     displayOne: displayOne,
     update: update,
-    deleteitem: deleteitem
+    deleteitem: deleteitem,
+    searchHouse:searchHouse
 }
 
 function insert(req, res, next) {
@@ -81,5 +82,43 @@ function deleteitem(req, res) {
         res.json({
             "messages": "File deleted"
         })
+    })
+}
+
+
+function displayOne(req, res) {
+    Listings.findOne({
+        _id: req.params.id
+    }, (err, listings) => {
+        //update the book
+        res.json(listings)
+    })
+}
+
+function searchHouse(req, res) {
+//  console.log(req.params.query);
+
+    Listings.find({
+        $or: [{
+            title: {
+                $regex: req.params.query+'*',
+                $options: 'i'
+            }
+        }, {
+            address: {
+                $regex: req.params.query+'*',
+                $options: 'i'
+            }
+        }, {
+            owner: {
+                $regex: req.params.query+'*',
+                $options: 'i'
+            }
+        }]
+    }, (err, listings) => {
+
+      if (err)
+          throw err;
+        res.json(listings)
     })
 }
